@@ -1,0 +1,111 @@
+
+Showing logs for build [32mjenkinsx01-sample-app-master-r5fsl-1[0m stage [32mfrom-build-pack[0m and container [32mcredential-initializer[0m
+{"level":"info","ts":1615801169.2119195,"caller":"creds-init/main.go:44","msg":"Credentials initialized."}
+
+Showing logs for build [32mjenkinsx01-sample-app-master-r5fsl-1[0m stage [32mfrom-build-pack[0m and container [32mworking-dir-initializer[0m
+
+Showing logs for build [32mjenkinsx01-sample-app-master-r5fsl-1[0m stage [32mfrom-build-pack[0m and container [32mplace-tools[0m
+
+Showing logs for build [32mjenkinsx01-sample-app-master-r5fsl-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-jenkinsx01-sample-app-master-r5fsl-8nfmx[0m
+{"level":"info","ts":1615801176.7577662,"caller":"git/git.go:105","msg":"Successfully cloned https://github.com/JenkinsX01/sample-app.git @ v0.0.1 in path /workspace/source"}
+{"level":"warn","ts":1615801176.7578566,"caller":"git/git.go:152","msg":"Unexpected error: creating symlink: symlink /tekton/home/.ssh /root/.ssh: file exists"}
+{"level":"info","ts":1615801176.7969146,"caller":"git/git.go:133","msg":"Successfully initialized and updated submodules in path /workspace/source"}
+
+Showing logs for build [32mjenkinsx01-sample-app-master-r5fsl-1[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-builder-home[0m
+
+Showing logs for build [32mjenkinsx01-sample-app-master-r5fsl-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mjenkinsx01-sample-app-master-r5fsl-1[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32mjenkinsx01-sample-app-master-r5fsl-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-make-build[0m
+Building project...
+
+Showing logs for build [32mjenkinsx01-sample-app-master-r5fsl-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+E0315 09:39:39.152252      10 aws_credentials.go:77] while getting AWS credentials NoCredentialProviders: no valid providers in chain. Deprecated.
+	For verbose messaging see aws.Config.CredentialsChainVerboseErrors
+[36mINFO[0m[0001] Resolved base name golang:1.12.7 to builder  
+[36mINFO[0m[0001] Using dockerignore file: /workspace/source/.dockerignore 
+[36mINFO[0m[0001] Retrieving image manifest golang:1.12.7      
+[36mINFO[0m[0002] Retrieving image manifest golang:1.12.7      
+[36mINFO[0m[0002] No base image, nothing to extract            
+[36mINFO[0m[0002] Built cross stage deps: map[0:[/dist/sample-app]] 
+[36mINFO[0m[0002] Retrieving image manifest golang:1.12.7      
+[36mINFO[0m[0002] Retrieving image manifest golang:1.12.7      
+[36mINFO[0m[0002] Executing 0 build triggers                   
+[36mINFO[0m[0002] Checking for cached layer karriacr.azurecr.io/todo/cache:a3a14811f47aecac81fa84160a364c8b8b84634f3b9b2c6d0f2ba830b8629dd5... 
+[36mINFO[0m[0002] No cached layer found for cmd COPY . .       
+[36mINFO[0m[0002] Unpacking rootfs as cmd COPY . . requires it. 
+[36mINFO[0m[0021] COPY . .                                     
+[36mINFO[0m[0021] Resolving 114 paths                          
+[36mINFO[0m[0021] Taking snapshot of files...                  
+[36mINFO[0m[0021] RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags="-w -s" -o /dist/sample-app ./main.go 
+[36mINFO[0m[0021] Taking snapshot of full filesystem...        
+[36mINFO[0m[0021] Pushing layer karriacr.azurecr.io/todo/cache:a3a14811f47aecac81fa84160a364c8b8b84634f3b9b2c6d0f2ba830b8629dd5 to cache now 
+[36mINFO[0m[0031] Resolving 27979 paths                        
+[36mINFO[0m[0035] cmd: /bin/sh                                 
+[36mINFO[0m[0035] args: [-c CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags="-w -s" -o /dist/sample-app ./main.go] 
+[36mINFO[0m[0035] Running: [/bin/sh -c CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags="-w -s" -o /dist/sample-app ./main.go] 
+[36mINFO[0m[0042] Taking snapshot of full filesystem...        
+[36mINFO[0m[0043] Resolving 28289 paths                        
+[36mINFO[0m[0047] Pushing layer karriacr.azurecr.io/todo/cache:be9471b0936152ee238517ccb93dca129eb9d1272bdc3e18dbd13306a0d63ec3 to cache now 
+[36mINFO[0m[0050] Saving file dist/sample-app for later use    
+[36mINFO[0m[0050] Deleting filesystem...                       
+[36mINFO[0m[0051] No base image, nothing to extract            
+[36mINFO[0m[0051] Executing 0 build triggers                   
+[36mINFO[0m[0051] Checking for cached layer karriacr.azurecr.io/todo/cache:9ff5143b0be0e99be3a0fc0d1f385443fb13d3883f4989567597c0aef43c2ac1... 
+[36mINFO[0m[0051] No cached layer found for cmd COPY --from=builder /dist/sample-app /app/sample-app 
+[36mINFO[0m[0051] Unpacking rootfs as cmd COPY --from=builder /dist/sample-app /app/sample-app requires it. 
+[36mINFO[0m[0051] COPY --from=builder /dist/sample-app /app/sample-app 
+[36mINFO[0m[0051] Resolving 1 paths                            
+[36mINFO[0m[0051] Taking snapshot of files...                  
+[36mINFO[0m[0051] Pushing layer karriacr.azurecr.io/todo/cache:9ff5143b0be0e99be3a0fc0d1f385443fb13d3883f4989567597c0aef43c2ac1 to cache now 
+[36mINFO[0m[0051] ENTRYPOINT ["/app/sample-app"]               
+[36mINFO[0m[0051] No files changed in this command, skipping snapshotting. 
+
+Showing logs for build [32mjenkinsx01-sample-app-master-r5fsl-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32mjenkinsx01-sample-app-master-r5fsl-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-changelog[0m
+Converted /workspace/source/charts/sample-app to an unshallow repository
+Generating change log from git ref 875f7c4789dd32443f0ce949caa49a1a7c917fe7 => 16b1a3fca8f900b1d5881e8704cc8eaf4a94cd41
+Associating user jenkins-x-bot in users.jenkins.io with email jenkins-x@googlegroups.com to git GitProvider user with login jenkins-x-bot-0 as emails match
+Adding label jenkins.io/git-github-userid=jenkins-x-bot-0 to user jenkins-x-bot in users.jenkins.io
+Associating user jenkins-x-bot in users.jenkins.io with email jenkins-x@googlegroups.com to git GitProvider user with login jenkins-x-bot-0 as emails match
+Adding label jenkins.io/git-github-userid=jenkins-x-bot-0 to user jenkins-x-bot in users.jenkins.io
+Finding issues in commit messages using git format
+Associating user github in users.jenkins.io with email noreply@github.com to git GitProvider user with login github-0 as emails match
+Adding label jenkins.io/git-github-userid=github-0 to user github in users.jenkins.io
+Associating user todd-ekenstam in users.jenkins.io with email Todd_Ekenstam@intuit.com to git GitProvider user with login todd-ekenstam-0 as emails match
+Adding label jenkins.io/git-github-userid=todd-ekenstam-0 to user todd-ekenstam in users.jenkins.io
+WARNING: No release found for JenkinsX01/sample-app and tag v0.0.1 so creating a new release
+Updated the release information at https://github.com/JenkinsX01/sample-app/releases/tag/v0.0.1
+generated: /workspace/source/charts/sample-app/templates/release.yaml
+Created Release sample-app-0-0-1 resource in namespace **
+Updating PipelineActivity jenkinsx01-sample-app-master-1 with version 0.0.1
+Updated PipelineActivities jenkinsx01-sample-app-master-1 with release notes URL: https://github.com/JenkinsX01/sample-app/releases/tag/v0.0.1
+
+Showing logs for build [32mjenkinsx01-sample-app-master-r5fsl-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-helm-release[0m
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Uploading chart file sample-app-0.0.1.tgz to http://jenkins-x-chartmuseum:8080/api/charts
+Received 201 response: {"saved":true}
+
+Showing logs for build [32mjenkinsx01-sample-app-master-r5fsl-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-promote[0m
+WARNING: prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/**/issues/2410
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Promoting app sample-app version 0.0.1 to namespace **-staging
+Created Pull Request: https://github.com/JenkinsX01/environment-**akscluster-staging/pull/12
+Added label updatebot to Pull Request https://github.com/JenkinsX01/environment-**akscluster-staging/pull/12
+got git provider status pending from PR https://github.com/JenkinsX01/environment-**akscluster-staging/pull/12
+got git provider status pending from PR https://github.com/JenkinsX01/environment-**akscluster-staging/pull/12
+got git provider status pending from PR https://github.com/JenkinsX01/environment-**akscluster-staging/pull/12
+Pull Request https://github.com/JenkinsX01/environment-**akscluster-staging/pull/12 is merged at sha 7865bd1d0a5700cc9da112ebe15d30d3bbbe86ea
+Pull Request merged but we are not waiting for the update pipeline to complete!
+WARNING: Could not find the service URL in namespace **-staging for names sample-app, **-sample-app, **-staging-sample-app
